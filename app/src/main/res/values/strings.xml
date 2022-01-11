@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ConSALTing Machine</string>
+    <string name="frag_info">Hier kann eine Beschreibung für den Betrieb der ConSALTing Machine eingetragen werden.</string>
+    <string name="btn_reset_salt">Salzfüllstand zurücksetzen</string>
+</resources>

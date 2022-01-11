@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.tablayout.CMainActFragmentConfig">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <ImageButton
+            android:id="@+id/fragm_act_main_config_BSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/img_synchronize"
+            />
+
+        <TextView
+            android:id="@+id/fragm_act_main_config_TVDeviceCOMText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ConSALTing Machine:"
+            app:layout_constraintTop_toTopOf="@id/fragm_act_main_config_BSearch"
+            app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_config_BSearch"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/fragm_act_main_config_TVDeviceCOMContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="getrennt"
+            android:textColor="#FFFF0000"
+            app:layout_constraintBaseline_toBaselineOf="@id/fragm_act_main_config_TVDeviceCOMText"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_config_TVDeviceCOMText"
+            android:layout_marginStart="15dp"/>
+
+        <ImageButton
+            android:id="@+id/fragm_act_main_config_BSynchronize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_config_BSearch"
+            android:src="@drawable/img_synchronize"
+            android:layout_marginTop="12dp"
+            />
+
+        <TextView
+            android:id="@+id/fragm_act_main_config_TVConfigText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fragm_act_main_config_BSynchronize"
+            app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_config_BSynchronize"
+            android:text="Konfiguration:"/>
+
+        <TextView
+            android:id="@+id/fragm_act_main_config_TVConfigContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/fragm_act_main_config_TVConfigText"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_config_TVConfigText"
+            android:layout_marginLeft="15dp"
+            android:textColor="#FFFF0000"
+            android:text="nicht aktuell" />
+
+        <TextView
+            android:id="@+id/fragm_act_main_config_TVSelMealText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Essen auswählen:"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_config_TVConfigText"
+            android:layout_marginTop="60dp"/>
+
+        <Spinner
+            android:id="@+id/fragm_act_main_config_SpSelMeal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/fragm_act_main_config_TVSelMealText"
+            app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_config_TVSelMealText"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_config_TVSelMealText"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:id="@+id/fragm_act_main_config_TVChangeSaltConcText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salzkonzentration festlegen:"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_config_SpSelMeal"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:id="@+id/fragm_act_main_config_TVChangeSaltConcContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="normal"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_config_TVChangeSaltConcText"
+            app:layout_constraintBaseline_toBaselineOf="@id/fragm_act_main_config_TVChangeSaltConcText"
+            android:textColor="#FF0000FF"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/fragm_act_main_config_SLChangeSaltConc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:thumbColor="#FF0000FF"
+            app:trackColorActive="#FF0000FF"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_config_TVChangeSaltConcText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:valueFrom="-2"
+            android:valueTo="2"
+            android:stepSize="1"
+            android:value="0" />
+
+        <Button
+            android:id="@+id/fragm_act_main_config_BResetSalt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_config_SLChangeSaltConc"
+            android:text="@string/btn_reset_salt"
+            android:layout_marginTop="15dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

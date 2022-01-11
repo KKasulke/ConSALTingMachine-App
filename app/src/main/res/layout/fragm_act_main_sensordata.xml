@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.tablayout.CMainActFragmentSensorData">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <ImageButton
+            android:id="@+id/fragm_act_main_sensordata_BSynchronize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/img_synchronize"
+            />
+
+        <TextView
+            android:id="@+id/fragm_act_main_sensordata_TVDeviceCOMText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ConSALTing Machine:"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintTop_toTopOf="@id/fragm_act_main_sensordata_BSynchronize"
+            app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_sensordata_BSynchronize"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/fragm_act_main_sensordata_TVDeviceCOMContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="getrennt"
+            android:textColor="#FFFF0000"
+            android:textSize="17sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/fragm_act_main_sensordata_TVDeviceCOMText"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_sensordata_TVDeviceCOMText"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/fragm_act_main_sensordata_TVbatteryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batteriezustand:"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_sensordata_TVDeviceCOMText"
+            app:layout_constraintLeft_toLeftOf="@id/fragm_act_main_sensordata_TVDeviceCOMText" />
+
+        <TextView
+            android:id="@+id/fragm_act_main_sensordata_TVbatteryContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:textColor="#FF0000FF"
+            android:textSize="17sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/fragm_act_main_sensordata_TVbatteryText"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_sensordata_TVDeviceCOMText"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/fragm_act_main_sensordata_TVSaltAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salzvorrat:"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_sensordata_TVbatteryText"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/fragm_act_main_sensordata_TVSaltAmountContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:textColor="#FF0000FF"
+            android:textSize="17sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/fragm_act_main_sensordata_TVSaltAmountText"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_sensordata_TVDeviceCOMText"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/fragm_act_main_sensordata_TVPressureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drucksensor:"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_sensordata_TVSaltAmountText"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/fragm_act_main_sensordata_TVPressureContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:textColor="#FF0000FF"
+            android:textSize="17sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/fragm_act_main_sensordata_TVPressureText"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_sensordata_TVDeviceCOMText"
+            android:layout_marginLeft="15dp"/>
+
+        <Button
+            android:id="@+id/fragm_act_main_sensordata_BReqData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_sensordata_TVPressureText"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Daten aktualisieren..." />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
