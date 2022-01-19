@@ -8,7 +8,7 @@ import java.util.List;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CMachineControlData;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CMeal;
 
-public interface IBluetoothFragmentActions {
+public interface IFragmentActions {
     void notifySpinnerUpdate(Context pContext, CMeal[] pMeal);
     void notifyLayoutUpdate(Context pContext);
     CMachineControlData requestSaltAmount();

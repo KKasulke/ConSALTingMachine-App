@@ -1,31 +1,21 @@
 package de.hitkarlsruhe.consaltingmachine.ui.main.tablayout;
 
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothGattService;
 import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.List;
-
-import de.hitkarlsruhe.consaltingmachine.CMainActivity;
-import de.hitkarlsruhe.consaltingmachine.IBluetoothActivityActions;
 import de.hitkarlsruhe.consaltingmachine.R;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CMachineControlData;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CMeal;
-import de.hitkarlsruhe.consaltingmachine.datastructures.CSensorData;
 
-public class CMainActFragmentInfo extends Fragment implements IBluetoothFragmentActions {
+public class CMainActFragmentInfo extends Fragment implements IFragmentActions {
     // ui variables
     private TextView tvInfo;
 

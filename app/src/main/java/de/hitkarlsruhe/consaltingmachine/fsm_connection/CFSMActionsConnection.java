@@ -26,7 +26,7 @@ import de.hitkarlsruhe.consaltingmachine.datastructures.CMachineControlData;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CSensorData;
 import de.hitkarlsruhe.consaltingmachine.datastructures.EInstructions;
 import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.CMainActPagerAdapter;
-import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.IBluetoothFragmentActions;
+import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.IFragmentActions;
 
 public class CFSMActionsConnection {
     // object of activity, helps to run methods on UI thread
@@ -37,7 +37,7 @@ public class CFSMActionsConnection {
     CMainActPagerAdapter mPagerAdapter;
 
     // interface for updating UI
-    IBluetoothFragmentActions mFragmentActions;
+    IFragmentActions mFragmentActions;
 
     // object of finite state machine
     CFSMConnection mFSM;
@@ -115,9 +115,9 @@ public class CFSMActionsConnection {
         mPagerAdapter.mFragmSensorData.mTVPressureSensorText = "---";
 
         // notify UI update
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmInfo).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmInfo).notifyLayoutUpdate(mContext);
     }
 
     void exitStateDisconnected() {
@@ -136,9 +136,9 @@ public class CFSMActionsConnection {
         mPagerAdapter.mFragmSensorData.mTVPressureSensorText = "---";
 
         // notify UI update
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmInfo).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmInfo).notifyLayoutUpdate(mContext);
 
         // start searching
         startScanning();
@@ -163,9 +163,9 @@ public class CFSMActionsConnection {
         mPagerAdapter.mFragmSensorData.mTVPressureSensorText = "---";
 
         // notify UI update
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmInfo).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmInfo).notifyLayoutUpdate(mContext);
 
         // connect to GATT
         connectToGatt();
@@ -185,9 +185,9 @@ public class CFSMActionsConnection {
         mPagerAdapter.mFragmSensorData.mTVConnectionStateColor = 0xFF00A05A;
 
         // notify UI update
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmInfo).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmInfo).notifyLayoutUpdate(mContext);
 
         mFSM.dispatchEvent(EEvents.UI_EVENT_UPDATE_SENSOR_DATA, mContext);
     }
@@ -287,7 +287,7 @@ public class CFSMActionsConnection {
 
      void handleConfigurationUpdate() {
          // transmit new settings
-         CMachineControlData mCtrlData = ((IBluetoothFragmentActions)mPagerAdapter.mFragmConfig).requestSaltAmount();
+         CMachineControlData mCtrlData = ((IFragmentActions)mPagerAdapter.mFragmConfig).requestSaltAmount();
          tempSaltAmount = mCtrlData.mSaltConcentration;
          requestTransmitMachineControlData(mCtrlData);
      }
@@ -322,12 +322,12 @@ public class CFSMActionsConnection {
 
      void handleSensorDataReceived() {
          // Update UI FragmentSensorData
-         mPagerAdapter.mFragmSensorData.mTVBatteryLevelText = Float.toString(mSensorData.mBatteryState*100.0f);
+         mPagerAdapter.mFragmSensorData.mTVBatteryLevelText = Float.toString(mSensorData.mBatteryState);
          mPagerAdapter.mFragmSensorData.mTVSaltAmountText = Float.toString(mSensorData.mSaltAmount);
          mPagerAdapter.mFragmSensorData.mTVPressureSensorText = Float.toString(mSensorData.mPressure);
 
          // notify UI Update
-         ((IBluetoothFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
+         ((IFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);
      }
 
      void handleMachineControlDataTransmittedSuccessful() {
@@ -663,7 +663,7 @@ public class CFSMActionsConnection {
         mPagerAdapter.mFragmConfig.mTVTargetConfigurationText = "aktuell";
         mPagerAdapter.mFragmConfig.mTVTargetConfigurationColor = 0xFF00A05A;
         // notify UI update
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
     }
     void entryTargetConfigNotUpdated() {
         // update layout
@@ -671,12 +671,12 @@ public class CFSMActionsConnection {
         mPagerAdapter.mFragmConfig.mTVTargetConfigurationColor = 0xFFFF0000;
 
         // notify UI update
-        ((IBluetoothFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
+        ((IFragmentActions)mPagerAdapter.mFragmConfig).notifyLayoutUpdate(mContext);
     }
 
     boolean handleUIChangedCheckSaltUpdated() {
         // check current configuration
-        if(((IBluetoothFragmentActions)mPagerAdapter.mFragmConfig).
+        if(((IFragmentActions)mPagerAdapter.mFragmConfig).
                 requestSaltAmount().mSaltConcentration == mTargetSaltConcentration) {
             return true;
         } else {

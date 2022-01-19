@@ -1,6 +1,5 @@
 package de.hitkarlsruhe.consaltingmachine.ui.main.tablayout;
 
-import android.bluetooth.BluetoothGattService;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -21,17 +20,16 @@ import android.widget.TextView;
 import com.google.android.material.slider.Slider;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hitkarlsruhe.consaltingmachine.CMainActivity;
 import de.hitkarlsruhe.consaltingmachine.EEvents;
-import de.hitkarlsruhe.consaltingmachine.IBluetoothActivityActions;
+import de.hitkarlsruhe.consaltingmachine.IActivityActions;
 import de.hitkarlsruhe.consaltingmachine.R;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CMachineControlData;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CMeal;
 import de.hitkarlsruhe.consaltingmachine.datastructures.EInstructions;
 
-public class CMainActFragmentConfig extends Fragment implements IBluetoothFragmentActions {
+public class CMainActFragmentConfig extends Fragment implements IFragmentActions {
     // Salt offset which is multiplied with slider value to increase or decrease desired salt amount
     public final float SALT_OFFSET = 5.0f;
 
@@ -57,7 +55,7 @@ public class CMainActFragmentConfig extends Fragment implements IBluetoothFragme
     CMeal[] mMealList;
 
     // interface which allows access of CMainActivity
-    IBluetoothActivityActions mActivityActions;
+    IActivityActions mActivityActions;
 
     public CMainActFragmentConfig() {
         // Required empty public constructor

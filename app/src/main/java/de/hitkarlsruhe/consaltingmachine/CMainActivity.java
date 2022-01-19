@@ -28,7 +28,7 @@ import de.hitkarlsruhe.consaltingmachine.filesystemaccess.CAsynchronousConfigFil
 import de.hitkarlsruhe.consaltingmachine.filesystemaccess.CAsynchronousConfigFileWriter;
 import de.hitkarlsruhe.consaltingmachine.filesystemaccess.IConfigFileReaderCallback;
 import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.CMainActPagerAdapter;
-import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.IBluetoothFragmentActions;
+import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.IFragmentActions;
 
 /* class CMainActivity
     @ToDo:
@@ -40,7 +40,7 @@ import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.IBluetoothFragmentAct
 
 public class CMainActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback,
                                                                 IConfigFileReaderCallback,
-                                                                IBluetoothActivityActions {
+        IActivityActions {
     // define initial configuration file content:
     CMeal[] mMealArray = {
             new CMeal("Nudeln",5.0f),
@@ -171,9 +171,9 @@ public class CMainActivity extends AppCompatActivity implements ActivityCompat.O
         }
 
         // try to update Layout
-        ((IBluetoothFragmentActions)mMainActPagerAdapter.mFragmConfig).notifySpinnerUpdate(CMainActivity.this, mMealArray);
-        ((IBluetoothFragmentActions)mMainActPagerAdapter.mFragmConfig).notifyLayoutUpdate(CMainActivity.this);
-        ((IBluetoothFragmentActions)mMainActPagerAdapter.mFragmSensorData).notifyLayoutUpdate(CMainActivity.this);
+        ((IFragmentActions)mMainActPagerAdapter.mFragmConfig).notifySpinnerUpdate(CMainActivity.this, mMealArray);
+        ((IFragmentActions)mMainActPagerAdapter.mFragmConfig).notifyLayoutUpdate(CMainActivity.this);
+        ((IFragmentActions)mMainActPagerAdapter.mFragmSensorData).notifyLayoutUpdate(CMainActivity.this);
     }
 
     @Override
@@ -324,7 +324,7 @@ public class CMainActivity extends AppCompatActivity implements ActivityCompat.O
                     new Thread(mFileWriter).start();
 
                     // update UI with initial values
-                    ((IBluetoothFragmentActions)mMainActPagerAdapter.getItem(tabLayout.getSelectedTabPosition()))
+                    ((IFragmentActions)mMainActPagerAdapter.getItem(tabLayout.getSelectedTabPosition()))
                             .notifySpinnerUpdate(CMainActivity.this, mMealArray);
                 }
                 checkAllPermissionsStartFSM();
@@ -354,7 +354,7 @@ public class CMainActivity extends AppCompatActivity implements ActivityCompat.O
                     new Thread(mFileWriter).start();
 
                     // update UI with initial values
-                    ((IBluetoothFragmentActions)mMainActPagerAdapter.getItem(tabLayout.getSelectedTabPosition()))
+                    ((IFragmentActions)mMainActPagerAdapter.getItem(tabLayout.getSelectedTabPosition()))
                             .notifySpinnerUpdate(CMainActivity.this, mMealArray);
                 }
                 checkAllPermissionsStartFSM();
@@ -434,7 +434,7 @@ public class CMainActivity extends AppCompatActivity implements ActivityCompat.O
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                ((IBluetoothFragmentActions)mMainActPagerAdapter.mFragmConfig).notifySpinnerUpdate(mContext, pMealArray);
+                ((IFragmentActions)mMainActPagerAdapter.mFragmConfig).notifySpinnerUpdate(mContext, pMealArray);
             }
         });
     }

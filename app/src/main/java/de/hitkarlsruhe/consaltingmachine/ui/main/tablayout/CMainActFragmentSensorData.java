@@ -15,12 +15,12 @@ import android.widget.TextView;
 
 import de.hitkarlsruhe.consaltingmachine.CMainActivity;
 import de.hitkarlsruhe.consaltingmachine.EEvents;
-import de.hitkarlsruhe.consaltingmachine.IBluetoothActivityActions;
+import de.hitkarlsruhe.consaltingmachine.IActivityActions;
 import de.hitkarlsruhe.consaltingmachine.R;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CMachineControlData;
 import de.hitkarlsruhe.consaltingmachine.datastructures.CMeal;
 
-public class CMainActFragmentSensorData extends Fragment implements IBluetoothFragmentActions {
+public class CMainActFragmentSensorData extends Fragment implements IFragmentActions {
     // variables which help to set the layout if the UI elements are not initialized
     public String mTVConnectionStateText;
     public int mTVConnectionStateColor;
@@ -36,7 +36,7 @@ public class CMainActFragmentSensorData extends Fragment implements IBluetoothFr
     private Button mBUpdateSensorData;
 
     // interface which allows to access CMainActivity
-    IBluetoothActivityActions mActivityActions;
+    IActivityActions mActivityActions;
 
     public CMainActFragmentSensorData() {
         // Required empty public constructor
