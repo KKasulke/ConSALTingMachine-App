@@ -15,15 +15,226 @@
         android:padding="20dp">
 
     <TextView
-        android:id="@+id/fragm_act_main_info_TVInfo"
+        android:id="@+id/fragm_act_main_info_TVInfo1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:textColor="#FF000000"
+        android:text="@string/frag_info1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:textColor="#FF000000"
-        android:text="@string/frag_info"
+        android:text="@string/fragm_info_ctrl_button"
+        android:layout_marginTop="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo1"
         app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/fragm_act_main_info_TVInfoCtrlBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo2"
+            android:text="1x drücken:"/>
+        <TextView
+            android:id="@+id/fragm_act_main_info_TVInfoCtrlBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingRight="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfoCtrlBtn1"
+            android:text="lange drücken:"/>
+        <TextView
+            android:id="@+id/fragm_act_main_info_TVInfoCtrlBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfoCtrlBtn2"
+            android:text="2x drücken:"/>
+
+        <TextView
+            android:id="@+id/fragm_act_main_info_TVInfoCtrlBtn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfoCtrlBtn2"
+            app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfoCtrlBtn1"
+            android:text="Wassermenge wiegen"/>
+        <TextView
+            android:id="@+id/fragm_act_main_info_TVInfoCtrlBtn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfoCtrlBtn2"
+            app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfoCtrlBtn2"
+            android:text="Salzdosiervorgang starten"/>
+        <TextView
+            android:id="@+id/fragm_act_main_info_TVInfoCtrlBtn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfoCtrlBtn2"
+            app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfoCtrlBtn3"
+            android:text="Salzfüllstand kalibrieren"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#FFFF0000"
+        android:text="Beim Kalibrieren des Salzfüllstands darf sich kein Wasser in der Maschine befinden."
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfoCtrlBtn3"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#FF000000"
+        android:text="@string/fragm_info_led"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo3"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo4"
+        android:text="grün:"
+        android:textColor="#FF00A05A"/>
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo_led1"
+        android:text="blau:"
+        android:textColor="#FF0000FF"/>
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:paddingRight="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo_led2"
+        android:text="schwach grün:"
+        android:textColor="#FF00A05A"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo_led3"
+        android:text="gelb:"
+        android:textColor="#FFFFCC00"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo_led4"
+        android:text="rot:"
+        android:textColor="#FFFF0000"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo_led5"
+        android:text="weiß:"
+        android:textColor="#FF000000"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragm_act_main_info_TVInfo_led6"
+        android:text="kurzzeitig rot:"
+        android:textColor="#FFFF0000"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfo_led3"
+        app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfo_led1"
+        android:text="betriebsbereit"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfo_led3"
+        app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfo_led2"
+        android:text="Wasser wird gewogen"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfo_led3"
+        app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfo_led3"
+        android:text="Dosiervorgang läuft"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfo_led3"
+        app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfo_led4"
+        android:text="Salzvorrat niedrig"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfo_led3"
+        app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfo_led5"
+        android:text="Salzvorrat leer"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfo_led3"
+        app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfo_led6"
+        android:text="Salz wird gewogen"/>
+
+    <TextView
+        android:id="@+id/fragm_act_main_info_TVInfo_led14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/fragm_act_main_info_TVInfo_led3"
+        app:layout_constraintBottom_toBottomOf="@id/fragm_act_main_info_TVInfo_led7"
+        android:text="Fehler beim Wiegen"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

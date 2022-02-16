@@ -30,9 +30,6 @@ import de.hitkarlsruhe.consaltingmachine.datastructures.CMeal;
 import de.hitkarlsruhe.consaltingmachine.datastructures.EInstructions;
 
 public class CMainActFragmentConfig extends Fragment implements IFragmentActions {
-    // Salt offset which is multiplied with slider value to increase or decrease desired salt amount
-    public final float SALT_OFFSET = 5.0f;
-
     // variables which help to set the layout if the UI elements are not initialized
     public String mTVConnectionStateText;
     public String mTVTargetConfigurationText;
@@ -47,7 +44,6 @@ public class CMainActFragmentConfig extends Fragment implements IFragmentActions
     private Spinner mSpinner;
     private TextView mTVSaltConcState;
     private Slider mSlider;
-    private Button mBResetSaltAmount;
 
     // adapters for spinner
     ArrayList<String> mMealListStrings;
@@ -119,7 +115,6 @@ public class CMainActFragmentConfig extends Fragment implements IFragmentActions
         // buttons
         mBConnection = v.findViewById(R.id.fragm_act_main_config_BSearch);
         mBSynchronize = v.findViewById(R.id.fragm_act_main_config_BSynchronize);
-        mBResetSaltAmount = v.findViewById(R.id.fragm_act_main_config_BResetSalt);
 
         // spinner
         mSpinner = v.findViewById(R.id.fragm_act_main_config_SpSelMeal);
@@ -168,12 +163,6 @@ public class CMainActFragmentConfig extends Fragment implements IFragmentActions
             @Override
             public void onClick(View v) {
                 mActivityActions.passEvent(EEvents.UI_EVENT_CONFIGURATION_UPDATE);
-            }
-        });
-        mBResetSaltAmount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mActivityActions.passEvent(EEvents.UI_EVENT_RESET_SALT_AMOUNT);
             }
         });
         return v;
@@ -225,8 +214,9 @@ public class CMainActFragmentConfig extends Fragment implements IFragmentActions
     public CMachineControlData requestSaltAmount() {
         if(mSlider != null && mSpinnerArrayAdapter != null) {
             // compute desired salt amount
+            // Use 15% of the salt amount of the selected meal as slider value
             float saltAmount = mMealList[mSpinner.getSelectedItemPosition()].mSaltAmount
-                    + mSlider.getValue()*SALT_OFFSET;
+                    + mMealList[mSpinner.getSelectedItemPosition()].mSaltAmount*0.15f*mSlider.getValue();
 
             // set salt amount to 0 if it is negative
             if(saltAmount < 0.0f) {

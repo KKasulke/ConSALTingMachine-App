@@ -31,21 +31,18 @@ import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.CMainActPagerAdapter;
 import de.hitkarlsruhe.consaltingmachine.ui.main.tablayout.IFragmentActions;
 
 /* class CMainActivity
-    @ToDo:
-        ==> Icon?
-        ==> Beschreibung in Info-Tab?
-        ==> Default-Salz-Werte für Reis/Nudeln/Kartoffeln/...?
-        ==> Salz-Offset?
  */
 
 public class CMainActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback,
                                                                 IConfigFileReaderCallback,
-        IActivityActions {
+                                                                IActivityActions {
     // define initial configuration file content:
     CMeal[] mMealArray = {
-            new CMeal("Nudeln",5.0f),
-            new CMeal("Reis", 10.0f),
-            new CMeal("Kartoffeln", 15.0f)
+            new CMeal("Nudeln",9.0f),
+            new CMeal("Reis", 5.0f),
+            new CMeal("Kartoffeln", 15.0f),
+            new CMeal("Quinoa", 3.0f),
+            new CMeal("Hirse", 3.0f)
     };
 
     // object of bluetooth adapter

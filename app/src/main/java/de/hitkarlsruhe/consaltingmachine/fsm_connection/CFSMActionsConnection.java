@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.List;
 
 import de.hitkarlsruhe.consaltingmachine.CMainActivity;
@@ -110,7 +112,6 @@ public class CFSMActionsConnection {
         // Update UI FragmentSensorData
         mPagerAdapter.mFragmSensorData.mTVConnectionStateText = "getrennt";
         mPagerAdapter.mFragmSensorData.mTVConnectionStateColor = 0xFFFF0000;
-        mPagerAdapter.mFragmSensorData.mTVBatteryLevelText = "---";
         mPagerAdapter.mFragmSensorData.mTVSaltAmountText = "---";
         mPagerAdapter.mFragmSensorData.mTVPressureSensorText = "---";
 
@@ -131,7 +132,6 @@ public class CFSMActionsConnection {
         // Update UI FragmentSensorData
         mPagerAdapter.mFragmSensorData.mTVConnectionStateText = "Suche läuft...";
         mPagerAdapter.mFragmSensorData.mTVConnectionStateColor = 0xFF0000FF;
-        mPagerAdapter.mFragmSensorData.mTVBatteryLevelText = "---";
         mPagerAdapter.mFragmSensorData.mTVSaltAmountText = "---";
         mPagerAdapter.mFragmSensorData.mTVPressureSensorText = "---";
 
@@ -158,7 +158,6 @@ public class CFSMActionsConnection {
         // Update UI FragmentSensorData
         mPagerAdapter.mFragmSensorData.mTVConnectionStateText = "verbinden...";
         mPagerAdapter.mFragmSensorData.mTVConnectionStateColor = 0xFF0000FF;
-        mPagerAdapter.mFragmSensorData.mTVBatteryLevelText = "---";
         mPagerAdapter.mFragmSensorData.mTVSaltAmountText = "---";
         mPagerAdapter.mFragmSensorData.mTVPressureSensorText = "---";
 
@@ -321,10 +320,11 @@ public class CFSMActionsConnection {
      }
 
      void handleSensorDataReceived() {
-         // Update UI FragmentSensorData
-         mPagerAdapter.mFragmSensorData.mTVBatteryLevelText = Float.toString(mSensorData.mBatteryState);
-         mPagerAdapter.mFragmSensorData.mTVSaltAmountText = Float.toString(mSensorData.mSaltAmount);
-         mPagerAdapter.mFragmSensorData.mTVPressureSensorText = Float.toString(mSensorData.mPressure);
+         // round values and update UI FragmentSensorData
+         DecimalFormat df = new DecimalFormat("#.#");
+         df.setRoundingMode(RoundingMode.HALF_UP);
+         mPagerAdapter.mFragmSensorData.mTVSaltAmountText = df.format(mSensorData.mSaltAmount);
+         mPagerAdapter.mFragmSensorData.mTVPressureSensorText = df.format(mSensorData.mPressure);
 
          // notify UI Update
          ((IFragmentActions)mPagerAdapter.mFragmSensorData).notifyLayoutUpdate(mContext);

@@ -57,7 +57,6 @@ public class CMainActFragmentInfo extends Fragment implements IFragmentActions {
         View view = inflater.inflate(R.layout.fragm_act_main_info, container, false);
 
         // create ui objects
-        tvInfo = view.findViewById(R.id.fragm_act_main_info_TVInfo);
 
         return view;
     }

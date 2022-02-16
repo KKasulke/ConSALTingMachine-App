@@ -122,15 +122,6 @@
             android:stepSize="1"
             android:value="0" />
 
-        <Button
-            android:id="@+id/fragm_act_main_config_BResetSalt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragm_act_main_config_SLChangeSaltConc"
-            android:text="@string/btn_reset_salt"
-            android:layout_marginTop="15dp"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

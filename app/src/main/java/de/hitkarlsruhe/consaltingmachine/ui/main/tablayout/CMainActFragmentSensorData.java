@@ -24,13 +24,11 @@ public class CMainActFragmentSensorData extends Fragment implements IFragmentAct
     // variables which help to set the layout if the UI elements are not initialized
     public String mTVConnectionStateText;
     public int mTVConnectionStateColor;
-    public String mTVBatteryLevelText;
     public String mTVSaltAmountText;
     public String mTVPressureSensorText;
 
     private ImageButton mBConnection;
     private TextView mTVConnectionState;
-    private TextView mTVBatteryLevel;
     private TextView mTVSaltAmount;
     private TextView mTVPressureSensor;
     private Button mBUpdateSensorData;
@@ -63,9 +61,6 @@ public class CMainActFragmentSensorData extends Fragment implements IFragmentAct
             mTVConnectionStateText = "getrennt";
             mTVConnectionStateColor = 0xFFFF0000;
         }
-        if(mTVBatteryLevelText == null || mTVBatteryLevelText.compareTo("") == 0) {
-            mTVBatteryLevelText = "---";
-        }
         if(mTVSaltAmountText == null || mTVSaltAmountText.compareTo("") == 0) {
             mTVSaltAmountText = "---";
         }
@@ -84,7 +79,6 @@ public class CMainActFragmentSensorData extends Fragment implements IFragmentAct
         // Initialize UI
         mBConnection = v.findViewById(R.id.fragm_act_main_sensordata_BSynchronize);
         mTVConnectionState = v.findViewById(R.id.fragm_act_main_sensordata_TVDeviceCOMContent);
-        mTVBatteryLevel = v.findViewById(R.id.fragm_act_main_sensordata_TVbatteryContent);
         mTVSaltAmount = v.findViewById(R.id.fragm_act_main_sensordata_TVSaltAmountContent);
         mTVPressureSensor = v.findViewById(R.id.fragm_act_main_sensordata_TVPressureContent);
         mBUpdateSensorData = v.findViewById(R.id.fragm_act_main_sensordata_BReqData);
@@ -120,12 +114,10 @@ public class CMainActFragmentSensorData extends Fragment implements IFragmentAct
     @Override
     public void notifyLayoutUpdate(Context pContext) {
         if(mTVConnectionState != null
-                && mTVBatteryLevel != null
                 && mTVSaltAmount != null
                 && mTVPressureSensor != null) {
             mTVConnectionState.setText(mTVConnectionStateText);
             mTVConnectionState.setTextColor(mTVConnectionStateColor);
-            mTVBatteryLevel.setText(mTVBatteryLevelText);
             mTVSaltAmount.setText(mTVSaltAmountText);
             mTVPressureSensor.setText(mTVPressureSensorText);
         }
